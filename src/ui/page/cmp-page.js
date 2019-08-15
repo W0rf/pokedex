@@ -75,9 +75,9 @@ class Page extends Component {
       const pokemon = collection[pokemonId]
 
       return (
-        <li className="pokemons__item" key={pokemon.id}>
+        <div className="pokemons__item" key={pokemon.id}>
           <Pokemon pokemon={pokemon} />
-        </li>
+        </div>
       )
     })
 
@@ -90,7 +90,9 @@ class Page extends Component {
         {isFetched ? (
           <p>Loading...</p>
         ) : (
-          <ul className="pokemons">{pokemons}</ul>
+          <ul className="pokemons">
+            <li>{pokemons}</li>
+          </ul>
         )}
       </div>
     )
